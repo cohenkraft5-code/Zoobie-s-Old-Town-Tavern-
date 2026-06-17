@@ -25,7 +25,7 @@ export default function Terms() {
           <p>Menus, pricing, hours, and availability are subject to change without notice. Seasonal items and draft selections rotate frequently. Please call ahead to confirm specific offerings or accommodate allergies and dietary restrictions.</p>
 
           <h2 className="font-display text-xl font-bold text-ink">Reservations</h2>
-          <p>Reservation requests are confirmed through our booking partner. A confirmed reservation holds your table for a limited grace period. Large parties may be subject to a service charge.</p>
+          <p>Reservations are taken by phone — please call us to book. A reserved table is held for a limited grace period, and large parties may be subject to a service charge.</p>
 
           <h2 className="font-display text-xl font-bold text-ink">Intellectual property</h2>
           <p>All content on this site — including the name, logo, photography, and menu descriptions — belongs to Zoobie's Old Town Tavern and may not be reproduced without permission.</p>

@@ -36,8 +36,6 @@ const PHONE_DISPLAY = '(517) 897-3563'
 const PHONE_TEL = '+15178973563'
 const ADDRESS = '1200 N Larch St, Lansing, MI 48906'
 const MAPS_URL = 'https://www.google.com/maps/search/?api=1&query=Zoobie%27s+Old+Town+Tavern+1200+N+Larch+St+Lansing+MI'
-const RESERVE_URL =
-  'https://tables.toasttab.com/restaurants/ad7d16ab-2b09-4ed9-a3e9-b82e40e98df4/reserve?partySize=2&dateTime=2026-06-16T21:00:00.000-04:00'
 const MENU_URL = 'https://www.zoobiesoldtowntavern.com/menu'
 const INSTAGRAM_URL = 'https://www.instagram.com/zoobiestavern/'
 const FACEBOOK_URL = 'https://www.facebook.com/ZoobiesOldTownTavern'
@@ -392,12 +390,10 @@ function Navbar() {
               <Phone className="h-3.5 w-3.5" /> {PHONE_DISPLAY}
             </a>
             <a
-              href={RESERVE_URL}
-              target="_blank"
-              rel="noopener noreferrer"
+              href={`tel:${PHONE_TEL}`}
               className="magnetic-btn cursor-pointer rounded-full bg-primary px-5 py-2 text-sm font-semibold text-background ember-glow"
             >
-              Reserve
+              Call to Reserve
             </a>
           </div>
 
@@ -453,12 +449,10 @@ function Navbar() {
               <Phone className="h-4 w-4" /> {PHONE_DISPLAY}
             </a>
             <a
-              href={RESERVE_URL}
-              target="_blank"
-              rel="noopener noreferrer"
+              href={`tel:${PHONE_TEL}`}
               className="magnetic-btn cursor-pointer rounded-full bg-primary px-6 py-3.5 text-center font-semibold text-background"
             >
-              Reserve a Table
+              Call to Reserve
             </a>
           </div>
         </div>
@@ -530,12 +524,10 @@ function Hero() {
 
           <div className="mt-9 flex flex-col sm:flex-row gap-3.5">
             <a
-              href={RESERVE_URL}
-              target="_blank"
-              rel="noopener noreferrer"
+              href={`tel:${PHONE_TEL}`}
               className="hero-cta magnetic-btn cursor-pointer inline-flex w-full sm:w-auto items-center justify-center gap-2 rounded-full bg-primary px-7 py-4 font-semibold text-background ember-glow"
             >
-              <CalendarCheck className="h-5 w-5" /> Reserve a Table
+              <Phone className="h-5 w-5" /> Call to Reserve
             </a>
             <a
               href="#menu"
@@ -855,18 +847,18 @@ function MenuSection() {
         <Reveal delay={0.1}>
           <div className="mt-10 sm:mt-12 flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3.5">
             <a
-              href={RESERVE_URL}
-              target="_blank"
-              rel="noopener noreferrer"
+              href={`tel:${PHONE_TEL}`}
               className="magnetic-btn cursor-pointer inline-flex w-full sm:w-auto items-center justify-center gap-2 rounded-full bg-primary px-7 py-4 font-semibold text-background ember-glow"
             >
-              <CalendarCheck className="h-5 w-5" /> Reserve a Table
+              <Phone className="h-5 w-5" /> Call to Reserve
             </a>
             <a
-              href={`tel:${PHONE_TEL}`}
+              href={MENU_URL}
+              target="_blank"
+              rel="noopener noreferrer"
               className="cursor-pointer inline-flex w-full sm:w-auto items-center justify-center gap-2 rounded-full border border-ink/20 bg-white/5 px-7 py-4 font-semibold text-ink hover:bg-white/10 hover:border-ink/40 transition-colors"
             >
-              <Phone className="h-5 w-5" /> Call {PHONE_DISPLAY}
+              <ArrowUpRight className="h-5 w-5" /> View Full Menu
             </a>
           </div>
           <p className="mt-4 text-center text-xs text-muted-2">
@@ -958,13 +950,13 @@ function Reviews() {
 }
 
 /* ----------------------------------------------------------------
-   Visit / Reserve + Inquiry form
+   Visit / Reserve (call-only)
 ---------------------------------------------------------------- */
 function Visit() {
   const ACTIONS = [
-    { label: 'Reserve a Table', sub: 'Instant booking on Toast', href: RESERVE_URL, icon: CalendarCheck, primary: true },
+    { label: 'Call to Reserve', sub: `Reservations by phone · ${PHONE_DISPLAY}`, href: `tel:${PHONE_TEL}`, icon: Phone, primary: true },
     { label: 'View the Menu', sub: 'Pizzas, shared plates & drinks', href: '#menu', icon: UtensilsCrossed },
-    { label: `Call ${PHONE_DISPLAY}`, sub: 'Questions or same-day tables', href: `tel:${PHONE_TEL}`, icon: Phone },
+    { label: 'Get Directions', sub: '1200 N Larch St · Old Town Lansing', href: MAPS_URL, icon: MapPin },
   ]
   return (
     <section id="visit" className="relative scroll-mt-24 py-16 sm:py-28 bg-background-2 border-t border-divider">
@@ -983,7 +975,7 @@ function Visit() {
             <Reveal delay={0.1}>
               <p className="mt-5 text-base sm:text-lg text-muted leading-relaxed">
                 Located inside The Cosmos in the heart of Old Town Lansing. Come in for dinner, pull up to the bar,
-                or book the table for a big night out.
+                or call ahead for a big night out.
               </p>
             </Reveal>
 
@@ -1052,7 +1044,8 @@ function Visit() {
             <div className="rounded-3xl sm:rounded-[2rem] border border-divider bg-surface p-6 sm:p-9 ember-glow">
               <h3 className="font-display text-2xl font-extrabold text-ink">Grab a table tonight</h3>
               <p className="mt-2 text-sm text-muted">
-                Book instantly on Toast, browse the full menu, or just give us a call — we’ll take care of the rest.
+                Reservations are by phone — give us a call and we’ll get your table set. Or just walk in and pull up a
+                chair.
               </p>
 
               <div className="mt-7 space-y-3">
@@ -1145,9 +1138,9 @@ function Footer() {
           ]} />
 
           <FooterCol title="Reserve & Menu" links={[
-            { label: 'Reserve a Table', href: RESERVE_URL, ext: true },
+            { label: 'Call to Reserve', href: `tel:${PHONE_TEL}` },
             { label: 'Full Menu', href: MENU_URL, ext: true },
-            { label: `Call ${PHONE_DISPLAY}`, href: `tel:${PHONE_TEL}` },
+            { label: 'Directions', href: MAPS_URL, ext: true },
           ]} />
 
           <div>

@@ -22,10 +22,10 @@ export default function PrivacyPolicy() {
           <p>Zoobie's Old Town Tavern ("we", "us") respects your privacy. This page explains what we collect when you visit our website or contact us, and how we use it.</p>
 
           <h2 className="font-display text-xl font-bold text-ink">Information we collect</h2>
-          <p>When you submit a reservation request, event inquiry, or contact form, we collect the name, phone number, email, party size, and any message you provide. We use this only to respond to you and coordinate your visit. We never sell your information.</p>
+          <p>This website doesn’t collect personal information through forms — there’s no online ordering or booking here. If you call or email us, we use only the details you share to respond and coordinate your visit. We never sell your information.</p>
 
           <h2 className="font-display text-xl font-bold text-ink">Reservations</h2>
-          <p>Online reservations are handled by our partner Toast under their own privacy policy. We do not process or store payment details on this site.</p>
+          <p>Reservations are made by phone — we don’t take bookings or payments through this website. When you call, we only use your details to hold your table and coordinate your visit.</p>
 
           <h2 className="font-display text-xl font-bold text-ink">Analytics &amp; cookies</h2>
           <p>We may use basic, privacy-respecting analytics to understand how guests find us so we can improve the site. You can disable cookies in your browser at any time.</p>
